@@ -2,25 +2,93 @@
 <html>
 <head>
     <title>Participant Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: #fff;
+            max-width: 450px;
+            margin: 50px auto;
+            padding: 35px 30px 25px 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+        }
+        h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        form {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        label {
+            display: block;
+            margin: 10px 0 4px 0;
+            color: #444;
+        }
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 7px 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 8px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .actions {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h2>Participant Registration</h2>
-    <form action="../src/registration.php" method="POST">
-        <h3>Register Participant</h3>
-        <label>Participant ID:</label>
-        <input type="number" name="partID" required><br>
-        <label>Event Code:</label>
-        <input type="number" name="evCode" required><br>
-        <label>Payment Mode:</label>
-        <select name="regPMode" required>
-            <option value="Card">Card</option>
-            <option value="Cash">Cash</option>
-        </select><br>
-        <button type="submit" name="registerParticipant">Register</button>
-    </form>
+    <div class="container">
+        <h2>Participant Registration</h2>
+        <form action="../src/registration.php" method="POST">
+            <h3>Register Participant</h3>
+            <label>Participant ID:</label>
+            <input type="number" name="partID" required>
+            <label>Event Code:</label>
+            <input type="number" name="evCode" required>
+            <label>Payment Mode:</label>
+            <select name="regPMode" required>
+                <option value="Card">Card</option>
+                <option value="Cash">Cash</option>
+            </select>
+            <div class="actions">
+                <button type="submit" name="registerParticipant">Register</button>
+            </div>
+        </form>
 
-    <h3>View Registration Transactions</h3>
-    <a href="../src/registration.php?viewAll=true">View Transactions</a><br>
-    <a href="index.html">Back to Home</a>
+        <h3>View Registration Transactions</h3>
+        <div class="actions">
+            <a href="../src/registration.php?viewAll=true">View Transactions</a>
+            <a href="index.html">Back to Home</a>
+        </div>
+    </div>
 </body>
 </html>

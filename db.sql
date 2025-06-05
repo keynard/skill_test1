@@ -21,11 +21,14 @@ CREATE TABLE IF NOT EXISTS participants (
 );
 
 -- Registration Table
+-- Registration Table
 CREATE TABLE IF NOT EXISTS registration (
     regCode INT PRIMARY KEY AUTO_INCREMENT,
     partID INT,
+    evCode INT,
     regDate DATE,
     regFeePaid DECIMAL(10,2),
     regPMode VARCHAR(20),
-    FOREIGN KEY (partID) REFERENCES participants(partID) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (partID) REFERENCES participants(partID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (evCode) REFERENCES events(evCode) ON DELETE SET NULL ON UPDATE CASCADE
 );

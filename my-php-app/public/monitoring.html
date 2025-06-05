@@ -2,22 +2,96 @@
 <html>
 <head>
     <title>Events Registration Monitoring</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: #fff;
+            max-width: 450px;
+            margin: 50px auto;
+            padding: 35px 30px 25px 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+        }
+        h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        form {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        label {
+            display: block;
+            margin: 10px 0 4px 0;
+            color: #444;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 7px 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 8px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 12px 0;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .actions {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h2>Events Registration Monitoring</h2>
-    <form action="../src/monitoring.php" method="GET">
-        <h3>Filter Registrations</h3>
-        <label>Event Name:</label>
-        <input type="text" name="evName" required><br>
-        <button type="submit" name="filterRegistrations">Filter</button>
-    </form>
+    <div class="container">
+        <h2>Events Registration Monitoring</h2>
+        <form action="../src/monitoring.php" method="GET">
+            <h3>Filter Registrations</h3>
+            <label>Event Name:</label>
+            <input type="text" name="evName" required>
+            <div class="actions">
+                <button type="submit" name="filterRegistrations">Filter</button>
+            </div>
+        </form>
 
-    <h3>Aggregate Functions</h3>
-    <ul>
-        <li><a href="../src/monitoring.php?count=true">Count Records</a></li>
-        <li><a href="../src/monitoring.php?sum=true">Sum Registration Fees</a></li>
-        <li><a href="../src/monitoring.php?discounts=true">Total Discounts</a></li>
-    </ul>
-    <a href="index.html">Back to Home</a>
+        <h3>Aggregate Functions</h3>
+        <ul>
+            <li><a href="../src/monitoring.php?count=true">Count Records</a></li>
+            <li><a href="../src/monitoring.php?sum=true">Sum Registration Fees</a></li>
+            <li><a href="../src/monitoring.php?discounts=true">Total Discounts</a></li>
+        </ul>
+        <div class="actions">
+            <a href="index.html">Back to Home</a>
+        </div>
+    </div>
 </body>
 </html>
